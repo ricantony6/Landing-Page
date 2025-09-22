@@ -1,101 +1,117 @@
-/*Reset basic styles*/
-
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    line-height: 1.6;
-    background-color: #eeebeb;
-    color: #333;
-    padding: 20px;
-}   
+  line-height: 1.6;
+  background-color: #eeebeb;
+  color: #333;
+}
 
-/*navbar */
-
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #347d24;
-    padding: 15px 40px;
-    color: white;
-} 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #347d24;
+  padding: 15px 40px;
+  color: white;
+}
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #c1edb6;
-    text-decoration: underline;
+  color: #c1edb6;
+  text-decoration: underline;
 }
 
-/*hero section*/
-
+/* Hero */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #f4f4f4;
-    margin-bottom: 20px;
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f4f4f4;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 .hero .btn {
-    margin-top: 20px;
-    padding:10px 20px;
-    background-color: #347d24;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #347d24;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
 }
 
 .hero .btn:hover {
-    background-color: #285e1a;
+  background-color: #285e1a;
 }
 
-/*services section*/
-
+/* Seções */
 section {
-    padding: 60px 20px;
+  padding: 60px 20px;
+}
+
+.sobre, .servicos {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/*footer*/
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #347d24;
-    color: white;
-    margin-top: 80px;
+  text-align: center;
+  padding: 20px;
+  background-color: #347d24;
+  color: white;
+  margin-top: 80px;
 }
 
 footer button {
@@ -106,4 +122,52 @@ footer button {
   background: #333;
   color: white;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+footer button:hover {
+  background: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+.dark-mode .hero {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .sobre,
+.dark-mode .servicos {
+  background-color: #181818;
 }
